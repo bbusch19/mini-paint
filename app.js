@@ -3,12 +3,18 @@ $(document).ready(function(){
 var box = $('.box');
 
 box.on('click', function() {
-	$(this).addClass(color);
+	box.on('mouseenter', function() {
+		$(this).addClass(color);
+	})
 })
 
 box.on('dblclick', function() {
-	$(this).removeClass(colors);
+	box.on('mouseleave', function() {
+		$(this).removeClass(colors);
+	})
 })
+
+
 
 $('#reset').on('click', function() {
 	$('.box').removeClass(colors);
